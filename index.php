@@ -3,6 +3,7 @@
 require "Pokemon.php";
 require "Pikachu.php";
 require "Charmeleon.php";
+require "Battle.php";
 
 
 $pokemon1 = new Pikachu("Pikachu");
@@ -22,29 +23,48 @@ $pokemon2 = new Charmeleon("Charmeleon");
 <section class="d-flex justify-content-between">
 
      <?php
-
+     
+     echo '<img src="img/pikachu'.'.jpg">';
      print_r('<pre>' . $pokemon1->PokemonStats() . '</pre>');
 
      ?>
 
-     <img src="img/vs.jpg" alt="versus" width="150" height="100" class="mt-5">
+     <img src="img/vs.jpg" alt="versus" width="150" height="100" class="mt-5" style="margin-left: 150px;">
 
      <?php
 
      print_r('<pre>' . $pokemon2->PokemonStats() . '</pre>');
+     echo '<img src="img/charmeleon'.'.jpg">';
 
      ?>
 
 </section>
 
-<section class="d-flex justify-content-between">
 
-	<img src="img/pikachu.jpg" alt="pikachu" width="150" height="100">
-	<img src="img/charmeleon.jpg" alt="charmeleon" width="150" height="100">
-	
-</section>
+<section class="text-center card mt-5">
 
-<section>
+<?php 
+
+$fight = new Fight($pokemon1, $pokemon2);
+
+echo "<br>";
+
+$fight->Attack($pokemon1, $pokemon2, "Electric Ring");
+echo $fight->GetMessage();
+//pokemon1 (pikachu) attacks pokemon2 (charmeleon) with eletric ring
+
+echo "<br>";
+
+$fight->Attack($pokemon2, $pokemon1, "Flare");
+echo $fight->GetMessage();
+//pokemon2 (charmeleon) attacks pokemon1 (pikachu) with flare
+
+
+//shows number of pokemons that are still alive
+echo " <br>Pokemons alive: ".Pokemon::getPopulation();
+echo "<br>";
+echo "<br>";
+?>
 </section>
 </body>
 </html>
