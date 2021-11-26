@@ -20,28 +20,31 @@ $pokemon2 = new Charmeleon("Charmeleon");
 	<title>PokeBattle - OOP</title>
 </head>
 <body>
+<style>
+body {
+  background-image: url('img/background.jpg');
+}
+</style>
 <section class="d-flex justify-content-between">
 
      <?php
      
-     echo '<img src="img/pikachu'.'.jpg">';
      print_r('<pre>' . $pokemon1->PokemonStats() . '</pre>');
 
      ?>
 
-     <img src="img/vs.jpg" alt="versus" width="150" height="100" class="mt-5" style="margin-left: 150px;">
+     <img src="img/vs.jpg" alt="versus" width="150" height="100" class="mt-5" style="margin-right: 50px;">
 
      <?php
 
      print_r('<pre>' . $pokemon2->PokemonStats() . '</pre>');
-     echo '<img src="img/charmeleon'.'.jpg">';
 
      ?>
 
 </section>
 
 
-<section class="text-center card mt-5">
+<section class="text-center font-weight-bold mt-5">
 
 <?php 
 
@@ -65,6 +68,10 @@ echo " <br>Pokemons alive: ".Pokemon::getPopulation();
 echo "<br>";
 echo "<br>";
 ?>
+</section>
+<section class="d-flex justify-content-between">
+<img src="img/pikachu.jpg" width="300" style="margin-left: 50px;">
+<img src="img/charmeleon.jpg">
 </section>
 </body>
 </html>
