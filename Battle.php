@@ -6,6 +6,8 @@ class Fight{
     
     public $message;
 
+    /* Gets Attacker attacks*/
+
     public function Attack($attacker, $defender, $attack){
         foreach($attacker->GetAttacks() AS $key=>$element){
             if ($element->GetAttackName() == $attack){
@@ -15,10 +17,12 @@ class Fight{
         $this->CalculateDamage( $defender->GetWeakness(), $defender->GetResistance(), $attacker->GetAttacks()[$attackIndex]->GetAttackDamage(), $attacker->GetEnergyType(), $defender, $attacker);
     }
 
+    /* Calculate damage by weakness and restistance */
+
     public function CalculateDamage($weakness, $resistance, $damage, $attackerType, $defender, $attacker){
-        if( $weakness->weaknessName == $attackerType){
+        if( $weakness->GetweaknessName() == $attackerType){
             $attackdamage = $damage * $weakness->GetWeaknessMultiplier();
-        } else if($resistance->resistanceName == $attackerType){
+        } else if($resistance->GetresistanceName() == $attackerType){
             $attackdamage = $damage - $resistance->GetResistanceMultiplier(); 
         }else{
             $attackdamage = $damage; 
@@ -26,10 +30,12 @@ class Fight{
         $this->DealDamage($attackdamage, $defender, $attacker);
     }
 
+    /* Check opponents health */
+
     public function DealDamage($damage, $defender, $attacker){
         $currentHealth = $defender->GetHealth();
         $defender->SetHealth($currentHealth-$damage);
-        $this->message = $attacker->GetName()." attacked ".$defender->GetName()." and dealt ".$damage." damage <br>".$defender->GetName()." has ".$defender->GetHealth()." health left<br><br>";
+        $this->message = $attacker->GetName()." attacked ".$defender->GetName()." and dealt ".$damage." damage <br>".$defender->GetName()."'s health is now: ".$defender->GetHealth()."<br><br>";
 
     }
 

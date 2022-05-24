@@ -1,8 +1,8 @@
 <?php
 
 class Resistance{
-	public $resistanceName;
-	public $resistanceMultiplier;
+	private $resistanceName;
+	private $resistanceMultiplier;
 
 	function __construct($name, $multiplier){
 		$this->resistanceName = $name;

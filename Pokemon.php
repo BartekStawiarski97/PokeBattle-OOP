@@ -4,13 +4,13 @@ require "Resistance.php";
 require "Attack.php";
 
 class Pokemon{
-    public $name;
-    public $energytype;
-    public $hitpoints;
-    public $health;
-    public $attacks;
-    public $weakness;
-    public $resistance;
+    private $name;
+    private $energytype;
+    private $hitpoints;
+    private $health;
+    private $attacks;
+    private $weakness;
+    private $resistance;
     private static $population = 0;
 
     public function __construct($name, $type, $hitpoints, $health, $attacks, $weakness, $resistance)
@@ -32,8 +32,8 @@ class Pokemon{
         "<br> Name: ". $this->GetName()."<br>
          Health: ". $this->GetHealth()."/".$this->GetHitpoints()."<br>
          Attack: ". $this->GetAttacks()[0]->GetAttackName()." ".$this->GetAttacks()[0]->GetAttackDamage().", ".$this->GetAttacks()[1]->GetAttackName()." ".$this->GetAttacks()[1]->GetAttackDamage()."<br>
-         Weakness: ". $this->GetWeakness()->weaknessName." ".$this->GetWeakness()->weaknessMultiplier."<br>
-         Resistance: ". $this->GetResistance()->resistanceName." ".$this->GetResistance()->resistanceMultiplier." <br><br>";
+         Weakness: ". $this->GetWeakness()->GetweaknessName()." ".$this->GetWeakness()->GetweaknessMultiplier()."<br>
+         Resistance: ". $this->GetResistance()->GetresistanceName()." ".$this->GetResistance()->GetresistanceMultiplier()." <br><br>";
     }
 
     public function GetName(){
@@ -106,4 +106,3 @@ class Pokemon{
         return self::$population;
     }
 }
-

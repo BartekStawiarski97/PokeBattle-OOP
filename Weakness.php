@@ -1,8 +1,8 @@
 <?php 
 
 class Weakness{
-	public $weaknessName;
-	public $weaknessMultiplier;
+	private $weaknessName;
+	private $weaknessMultiplier;
 
 	function __construct($name, $multiplier){
 		$this->weaknessName = $name;

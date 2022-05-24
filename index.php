@@ -45,6 +45,7 @@ body {
 
 
 <section class="text-center font-weight-bold mt-5">
+ <div class="card mx-auto" style="width:450px;">
 
 <?php 
 
@@ -68,6 +69,7 @@ echo " <br>Pokemons alive: ".Pokemon::getPopulation();
 echo "<br>";
 echo "<br>";
 ?>
+</div>
 </section>
 <section class="d-flex justify-content-between">
 <img src="img/pikachu.jpg" width="300" style="margin-left: 50px;">
