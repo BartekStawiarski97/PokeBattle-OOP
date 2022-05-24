@@ -25,16 +25,6 @@ class Pokemon{
         self::$population++;
     }
     
-    
-    // Pokemon stats
-    public function PokemonStats(){
-        return
-        "<br> Name: ". $this->GetName()."<br>
-         Health: ". $this->GetHealth()."/".$this->GetHitpoints()."<br>
-         Attack: ". $this->GetAttacks()[0]->GetAttackName()." ".$this->GetAttacks()[0]->GetAttackDamage().", ".$this->GetAttacks()[1]->GetAttackName()." ".$this->GetAttacks()[1]->GetAttackDamage()."<br>
-         Weakness: ". $this->GetWeakness()->GetweaknessName()." ".$this->GetWeakness()->GetweaknessMultiplier()."<br>
-         Resistance: ". $this->GetResistance()->GetresistanceName()." ".$this->GetResistance()->GetresistanceMultiplier()." <br><br>";
-    }
 
     public function GetName(){
         return $this->name;

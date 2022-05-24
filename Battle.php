@@ -17,7 +17,7 @@ class Fight{
         $this->CalculateDamage( $defender->GetWeakness(), $defender->GetResistance(), $attacker->GetAttacks()[$attackIndex]->GetAttackDamage(), $attacker->GetEnergyType(), $defender, $attacker);
     }
 
-    /* Calculate damage by weakness and restistance */
+    /* Calculates damage by weakness and restistance */
 
     public function CalculateDamage($weakness, $resistance, $damage, $attackerType, $defender, $attacker){
         if( $weakness->GetweaknessName() == $attackerType){
@@ -35,8 +35,6 @@ class Fight{
     public function DealDamage($damage, $defender, $attacker){
         $currentHealth = $defender->GetHealth();
         $defender->SetHealth($currentHealth-$damage);
-        $this->message = $attacker->GetName()." attacked ".$defender->GetName()." and dealt ".$damage." damage <br>".$defender->GetName()."'s health is now: ".$defender->GetHealth()."<br><br>";
-
     }
 
     public function GetMessage(){
